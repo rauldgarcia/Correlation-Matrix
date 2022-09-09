@@ -1,4 +1,6 @@
+from email.mime import image
 import numpy as np
+import cv2
 
 #transpuesta de matriz
 def transpose(matrix):
@@ -10,6 +12,15 @@ def transpose(matrix):
             result[i][j] = matrix[j][i]
             
     return result
+
+#Carga de imagen
+imagen = cv2.imread('mario.jpg')
+cv2.imshow('imagen',imagen)
+cv2.waitKey(0)
+
+#Extraer componentes B,G,R de un solo pixel (opencv los da en ese orden y se cargan las coordenadas en orden Y X)
+(b, g, r) = imagen[228, 173]
+print("R={}, G={}, B={}".format(r,g,b))
 
 #definicion de puntos
 x1=[
