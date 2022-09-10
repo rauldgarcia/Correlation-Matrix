@@ -18,11 +18,11 @@ def transpose(matrix):
     return result
 
 #Carga de imagen
-imagen = cv2.imread('imagen6.jpg')
+imagen = cv2.imread('imagen3.jpg')
 #cv2.imshow('imagen',imagen)
 cv2.waitKey(0)
-resolucionx=222
-resoluciony=394
+resolucionx=3840
+resoluciony=2160
 
 #Vector auxiliar para calcular vector promedio
 sumrgb=np.array([
@@ -141,10 +141,12 @@ for i in range (3):
     print(rgb)
     x_mu=rgb-vm
     x_mut=transpose(x_mu)
-    auxiliar=np.array([
+    auxiliar2=np.array([
         [0,0,0]
     ])
-    auxiliar=np.dot((x_mut/det),x_mu)
-    n=(1/((2*3.1416)**1.5))*(1/((det)**0.5))*(math.exp(-0.5*auxiliar))
+    cxi=np.linalg.inv(cx)
+    auxiliar1=np.matmul(x_mut,cxi)
+    auxiliar2=np.matmul(auxiliar1,x_mu)
+    n=(1/((2*3.1416)**1.5))*(1/((det)**0.5))*(math.exp(-0.5*auxiliar2))
     print("La probabilidad de cercania al color promedio es:")
     print(n*100)
