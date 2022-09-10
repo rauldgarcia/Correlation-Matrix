@@ -1,8 +1,9 @@
 from email.mime import image
+from sys import maxunicode
 import numpy as np
 import cv2
 
-#transpuesta de matriz
+#Transpuesta de matriz
 def transpose(matrix):
         
     result = [[None for i in range(len(matrix))] for j in range(len(matrix[0]))]
@@ -14,120 +15,106 @@ def transpose(matrix):
     return result
 
 #Carga de imagen
-imagen = cv2.imread('mario.jpg')
-cv2.imshow('imagen',imagen)
+imagen = cv2.imread('imagen1.jpg')
+#cv2.imshow('imagen',imagen)
 cv2.waitKey(0)
+resolucionx=345
+resoluciony=456
+
+#Vector auxiliar para calcular vector promedio
+sumrgb=np.array([
+    [0],
+    [0],
+    [0]
+])
+
+#Contador auxiliar para calcular promedio
+cont=0
+
+#Creacion de vector promedio
+vm=np.array([
+    [0],
+    [0],
+    [0]
+])
 
 #Extraer componentes B,G,R de un solo pixel (opencv los da en ese orden y se cargan las coordenadas en orden Y X)
-(b, g, r) = imagen[228, 173]
-print("R={}, G={}, B={}".format(r,g,b))
+for y in range (resoluciony):
+    for x in range (resolucionx):
+        (b, g, r) = imagen[y, x]
+        rgb=np.array([
+            [r],
+            [g],
+            [b]
+        ])
+        sumrgb=sumrgb+rgb
+        cont+=1
 
-#definicion de puntos
-x1=[
-    [2],
-    [-1]
-    ]
+#creacion de vector auxiliar para calculo de vector promedio
+aux=np.array([
+    [cont],
+    [cont],
+    [cont]
+])
 
-x2=[
-    [5],
-    [-3]
-    ]
-
-x3=[
-    [3],
-    [-2]
-    ]
-
-x4=[
-    [6],
-    [-5]
-    ]
-
-x5=[
-    [4],
-    [-2]
-    ]
-
-x6=[
-    [2],
-    [-3]
-    ]    
-
-x7=[
-    [3],
-    [-5]
-    ]
-
-#vector auxiliar para calculo de promedio
-vectoraux=[
-    [7],
-    [7]
-    ]
-
-#vector auxiliar para calculo de promedio k-1
-vectoraux2=[
-    [6],
-    [6]
-    ]
-
-#definicion de vectores x
-puntox1=np.array(x1)
-puntox2=np.array(x2)
-puntox3=np.array(x3)
-puntox4=np.array(x4)
-puntox5=np.array(x5)
-puntox6=np.array(x6)
-puntox7=np.array(x7)
-vaux=np.array(vectoraux)
-vuax2=np.array(vectoraux2)
-
-#calculo de vector promedio m
-m=(puntox1+puntox2+puntox3+puntox4+puntox5+puntox6+puntox7)/vaux
+#Calculo de vector promedio
+vm=sumrgb/aux
 print("\nEl vector promedio es:")
-print(m)
+print(vm)
 
-#calculo de x-m
-x1_m=puntox1-m
-x2_m=puntox2-m
-x3_m=puntox3-m
-x4_m=puntox4-m
-x5_m=puntox5-m
-x6_m=puntox6-m
-x7_m=puntox7-m
+#Creacion de matriz auxiliar
+sumamatriz=np.array([
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+])
 
-#transpuesta de vector x-m
-tx1_m=transpose(x1_m)
-tx2_m=transpose(x2_m)
-tx3_m=transpose(x3_m)
-tx4_m=transpose(x4_m)
-tx5_m=transpose(x5_m)
-tx6_m=transpose(x6_m)
-tx7_m=transpose(x7_m)
+#Extraer componentes B,G,R de un solo pixel (opencv los da en ese orden y se cargan las coordenadas en orden Y X)
+for y in range (resoluciony):
+    for x in range (resolucionx):
+        (b, g, r) = imagen[y, x]
+        rgb=np.array([
+            [r],
+            [g],
+            [b]
+        ])
+        
+        #Calculo de vector x-m
+        x_m=rgb-vm
+        #Transpuesta de x-m
+        x_mt=transpose(x_m)
+        #Creacion de matriz (x-m)(x-m)^t
+        matriz=x_m*x_mt
+        sumamatriz=sumamatriz+matriz
+        cont+=1
 
-#calculo de matriz (x-m)(x-m)^t
-x1_mt=x1_m*tx1_m
-x2_mt=x2_m*tx2_m
-x3_mt=x3_m*tx3_m
-x4_mt=x4_m*tx4_m
-x5_mt=x5_m*tx5_m
-x6_mt=x6_m*tx6_m
-x7_mt=x7_m*tx7_m
+#Creacion de matriz auxiliar
+maux=np.array([
+    [cont-1,cont-1,cont-1],
+    [cont-1,cont-1,cont-1],
+    [cont-1,cont-1,cont-1]
+])
 
-#calculo de Cx
-cx=(x1_mt+x2_mt+x3_mt+x4_mt+x5_mt+x6_mt+x7_mt)/vuax2
+#calculo de matriz de covarianza
+cx=np.array([
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+])
+cx=sumamatriz/maux
 print("\nLa matriz de covarianza es:")
 print(cx)
 
+#Creacion de matriz auxiliar para calculo de matriz de correlacion
 cii=cx[0][0]
 cjj=cx[1][1]
-
-denominador=pow(cii*cjj,0.5)
-
-matrizaux=[
-    [denominador,denominador],
-    [denominador,denominador]
-]
-maux=np.array(matrizaux)
+ckk=cx[2][2]
+denominador=pow(cii*cjj*ckk,0.5)
+matrizaux=np.array([
+    [denominador,denominador,denominador],
+    [denominador,denominador,denominador],
+    [denominador,denominador,denominador]
+])
 
 #calculo de matriz de correlacion
 rx=cx/maux
