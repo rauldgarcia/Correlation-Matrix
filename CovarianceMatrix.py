@@ -1,3 +1,4 @@
+from email.base64mime import header_length
 from email.mime import image
 from re import M
 from sys import maxunicode
@@ -23,11 +24,11 @@ def transpose(matrix):
     return result
 
 #Carga de imagen
-imagen = cv2.imread('imagen7.jpeg')
+imagen = cv2.imread('imagen4.jpg')
 #cv2.imshow('imagen',imagen)
 cv2.waitKey(0)
-resolucionx=800
-resoluciony=800
+resolucionx=1366
+resoluciony=772
 print("La resolución de la imagen es:")
 print(resolucionx)
 print(resoluciony)
@@ -39,11 +40,11 @@ sumrgb=np.zeros((3,1))
 
 #Contador auxiliar para calcular promedio
 cont=0
-contador=0
 
 #Creacion de vector promedio
 vm=np.zeros((3,1))
 
+#Creación de arrays para ploteo de colores
 x1=np.zeros((1,1))
 y1=np.zeros((1,1))
 z1=np.zeros((1,1))
@@ -136,25 +137,45 @@ print(eigenvalor)
 print("\nLos eigenvectores son:")
 print(eigenvector)
 
+den=eigenvalor[0]+eigenvalor[1]+eigenvalor[2]
+pv1=eigenvalor[0]/den
+pv2=eigenvalor[1]/den
+pv3=eigenvalor[2]/den
+print("\nEl porcentaje del total de la varianza para el eigenvalor 1 es:")
+print(pv1*100)
+print("\nEl porcentaje del total de la varianza para el eigenvalor 2 es:")
+print(pv2*100)
+print("\nEl porcentaje del total de la varianza para el eigenvalor 3 es:")
+print(pv3*100)
+
 #creacion de vector medio
 vmx=(0,vm[0])
 vmy=(0,vm[1])
 vmz=(0,vm[2])
 
 #creacion de eigenvector 1
-ev1x=(vm[0],eigenvector[0][0])
-ev1y=(vm[1],eigenvector[0][1])
-ev1z=(vm[2],eigenvector[0][2])
+ev1x=(vm[0]+(eigenvector[0][0]))
+ev1y=(vm[1]+(eigenvector[1][0]))
+ev1z=(vm[2]+(eigenvector[2][0]))
+v1x=np.append(vm[0],ev1x)
+v1y=np.append(vm[1],ev1y)
+v1z=np.append(vm[2],ev1z)
 
 #creacion de eigenvector 2
-ev2x=(vm[0],eigenvector[1][0])
-ev2y=(vm[1],eigenvector[1][1])
-ev2z=(vm[2],eigenvector[1][2])
+ev2x=(vm[0]+(eigenvector[0][1]))
+ev2y=(vm[1]+(eigenvector[1][1]))
+ev2z=(vm[2]+(eigenvector[2][1]))
+v2x=np.append(vm[0],ev2x)
+v2y=np.append(vm[1],ev2y)
+v2z=np.append(vm[2],ev2z)
 
 #creacion de eigenvector 3
-ev3x=(vm[0],eigenvector[2][0])
-ev3y=(vm[1],eigenvector[2][1])
-ev3z=(vm[2],eigenvector[2][2])
+ev3x=(vm[0]+(eigenvector[0][2]))
+ev3y=(vm[1]+(eigenvector[1][2]))
+ev3z=(vm[2]+(eigenvector[2][2]))
+v3x=np.append(vm[0],ev3x)
+v3y=np.append(vm[1],ev3y)
+v3z=np.append(vm[2],ev3z)
 
 #creacion de los array de xyz
 colores=pd.DataFrame(color)
@@ -166,10 +187,13 @@ z1=colores[2]
 fig=plt.figure()
 axes=plt.axes(projection='3d')
 axes.scatter3D(x1,y1,z1,c=color)
+axes.set_xlim([0,1])
+axes.set_ylim([0,1])
+axes.set_zlim([0,1])
 axes.plot(vmx,vmy,vmz)
-axes.plot(ev1x,ev1y,ev1z)
-axes.plot(ev2x,ev2y,ev2z)
-axes.plot(ev3x,ev3y,ev3z)
+axes.plot(v1x,v1y,v1z)
+axes.plot(v2x,v2y,v2z)
+axes.plot(v3x,v3y,v3z)
 axes.set_title("Grafico de distribución de pixeles")
 axes.set_xlabel("R")
 axes.set_ylabel("G")
