@@ -9,11 +9,13 @@
 - Extraer 3 pixeles al azar. 
 - Calcular su probabilidad de cercanía al color promedio 
 
-**IMAGEN 1:  ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.001.jpeg)**
+**IMAGEN 1:  
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.001.jpeg)**
 
 Tamaño: 720x480  
 
-*El vector promedio es:  ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.002.png)
+*El vector promedio es:  
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.002.png)
 
 ` `[[0.6555878]  
 
@@ -43,7 +45,8 @@ B -0.998433 -0.066401  1.000000
 
 
 
-*El pixel es: (514,266)  ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.003.png)
+*El pixel es: (514,266)  
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.003.png)
 
 
 ` `[[0.92156863]  
@@ -56,7 +59,8 @@ B -0.998433 -0.066401  1.000000
 *La cercanía al color promedio es:  2.0622687448676484  
 
 
-*El pixel es: (135,175)  ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.004.png)
+*El pixel es: (135,175)  
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.004.png)
 
 ` `[[0.13333333]  
 
@@ -68,7 +72,8 @@ B -0.998433 -0.066401  1.000000
 *La cercania al color promedio es:  0.15991503473293497  
 
 
-*El pixel es: (71,176)  ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.005.png)
+*El pixel es: (71,176)  
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.005.png)
 
 ` `[[0.4627451 ]  
 
@@ -110,11 +115,13 @@ En esta imagen podemos observar que el color promedio es un morado claro. En la 
 Al analizar los 3 pixeles al azar, se puede ver que el que tiene mas cercanía al color promedio es el rosa, después le sigue es el azul claro, mientras que el azul oscuro es el mas lejano. 
 
 
-**IMAGEN 2:  ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.006.jpeg)
+**IMAGEN 2:  
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.006.jpeg)
 
 **Tamaño: 1100x600  
 
-*El vector promedio es:    ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.007.png)
+*El vector promedio es:    
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.007.png)
 
 ` `[[0.16362125]
 
@@ -173,11 +180,13 @@ En esta imagen podemos observar que el color promedio es un verde oscuro. En la 
 
 
 
-**IMAGEN 3:  ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.008.jpeg)
+**IMAGEN 3:  
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.008.jpeg)
 
 **Tamaño: 1366x772  
 
-*El vector promedio es:    ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.009.png)  
+*El vector promedio es:    
+![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.009.png)  
 
 ` `[[0.42683317]
 
