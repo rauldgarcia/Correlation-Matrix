@@ -12,9 +12,9 @@
 **IMAGEN 1:  
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.001.jpeg)**
 
-Tamaño: 720x480  
+* Tamaño: 720x480  
 
-*El vector promedio es:  
+* El vector promedio es:  
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.002.png)
 
 ` `[[0.6555878]  
@@ -24,7 +24,7 @@ Tamaño: 720x480
 ` `[0.71620631]]  
 
 
-*La matriz de covarianza es:  
+* La matriz de covarianza es:  
 
 [[ 0.12017971  0.05735187 -0.0122049 ]   
 
@@ -33,7 +33,7 @@ Tamaño: 720x480
 [-0.0122049   0.0532144   0.11285893]]  
 
 
-*La matriz de correlación es:  
+* La matriz de correlación es:  
 
 `          `R               G            B     
 
@@ -45,7 +45,7 @@ B -0.998433 -0.066401  1.000000
 
 
 
-*El pixel es: (514,266)  
+* El pixel es: (514,266)  
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.003.png)
 
 
@@ -56,10 +56,10 @@ B -0.998433 -0.066401  1.000000
 ` `[0.77254902]]  
 
 
-*La cercanía al color promedio es:  2.0622687448676484  
+* La cercanía al color promedio es:  2.0622687448676484  
 
 
-*El pixel es: (135,175)  
+* El pixel es: (135,175)  
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.004.png)
 
 ` `[[0.13333333]  
@@ -69,10 +69,10 @@ B -0.998433 -0.066401  1.000000
 ` `[0.95686275]]  
 
 
-*La cercania al color promedio es:  0.15991503473293497  
+* La cercania al color promedio es:  0.15991503473293497  
 
 
-*El pixel es: (71,176)  
+* El pixel es: (71,176)  
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.005.png)
 
 ` `[[0.4627451 ]  
@@ -81,15 +81,15 @@ B -0.998433 -0.066401  1.000000
 
 ` `[0.90196078]]  
 
-*La cercania al color promedio es:  0.5639572821535827  
+* La cercania al color promedio es:  0.5639572821535827  
 
 
-*Los eigenvalores son:
+* Los eigenvalores son:
 
 [0.0206214 0.12828059 0.17779448]
 
 
-*Los eigenvectores son:
+* Los eigenvectores son:
 
 O                 G                    R
             
@@ -99,11 +99,11 @@ O                 G                    R
  
  [ 0.4851142   0.75128526  0.44747589]]
 
-*El porcentaje del total de la varianza para el eigenvalor 1 es: 6.31%
+* El porcentaje del total de la varianza para el eigenvalor 1 es: 6.31%
 
-*El porcentaje del total de la varianza para el eigenvalor 2 es: 39.26%
+* El porcentaje del total de la varianza para el eigenvalor 2 es: 39.26%
 
-*El porcentaje del total de la varianza para el eigenvalor 3 es: 54.42%
+* El porcentaje del total de la varianza para el eigenvalor 3 es: 54.42%
 
 ![](Aspose.Words.1638c484-0abc-4c0b-842b-bbc6bf799ec3.007.png)
 
@@ -118,9 +118,9 @@ Al analizar los 3 pixeles al azar, se puede ver que el que tiene mas cercanía a
 **IMAGEN 2:  
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.006.jpeg)
 
-**Tamaño: 1100x600  
+* Tamaño: 1100x600  
 
-*El vector promedio es:    
+* El vector promedio es:    
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.007.png)
 
 ` `[[0.16362125]
@@ -130,7 +130,7 @@ Al analizar los 3 pixeles al azar, se puede ver que el que tiene mas cercanía a
 ` `[0.19278233]]  
 
 
-*La matriz de covarianza es:  
+* La matriz de covarianza es:  
 
 [[ 0.0718461   0.0636648  -0.00437135]   
 
@@ -139,7 +139,7 @@ Al analizar los 3 pixeles al azar, se puede ver que el que tiene mas cercanía a
 [-0.00437135  0.00951601  0.02281596]] 
 
 
-*La matriz de correlación es: 
+* La matriz de correlación es: 
 
 `          `R               G              B 
 
@@ -150,11 +150,11 @@ G  0.983511  1.000000 -0.813876
 B -0.905537 -0.813876  1.000000 
 
 
-*Los eigenvalores son:
+* Los eigenvalores son:
 
 [0.13431133 0.00212393 0.02742039]
 
-*Los eigenvectores son:
+* Los eigenvectores son:
 
 O                 G                    R
             
@@ -183,7 +183,7 @@ En esta imagen podemos observar que el color promedio es un verde oscuro. En la 
 **IMAGEN 3:  
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.008.jpeg)
 
-**Tamaño: 1366x772  
+* Tamaño: 1366x772  
 
 *El vector promedio es:    
 ![](Aspose.Words.e1b318f4-d82a-49b0-9731-c2ca0968d917.009.png)  
@@ -195,7 +195,7 @@ En esta imagen podemos observar que el color promedio es un verde oscuro. En la 
 ` `[0.1187362 ]] 
 
 
-*La matriz de covarianza es:  
+* La matriz de covarianza es:  
 
 [[ 0.14934905  0.00548443 -0.0260601 ]   
 
@@ -205,7 +205,7 @@ En esta imagen podemos observar que el color promedio es un verde oscuro. En la 
 
 
 
-La matriz de correlación es: 
+* La matriz de correlación es: 
 
 `          `R               G               B 
 
@@ -216,11 +216,11 @@ G -0.349142  1.000000 -0.013174
 B -0.932389 -0.013174  1.000000 
 
 
-*Los eigenvalores son:
+* Los eigenvalores son:
 
 [0.15540686 0.03220207 0.07314833]
 
-*Los eigenvectores son:
+* Los eigenvectores son:
  
 O                 G                    R
 [[ 0.97508325  0.22154042 -0.01151075]
@@ -230,11 +230,11 @@ O                 G                    R
  [-0.21624258  0.96078457  0.17358619]]
 
 
-*El porcentaje del total de la varianza para el eigenvalor 1 es: 59.59%
+* El porcentaje del total de la varianza para el eigenvalor 1 es: 59.59%
 
-*El porcentaje del total de la varianza para el eigenvalor 2 es: 12.34%
+* El porcentaje del total de la varianza para el eigenvalor 2 es: 12.34%
 
-*El porcentaje del total de la varianza para el eigenvalor 3 es: 28.05%
+* El porcentaje del total de la varianza para el eigenvalor 3 es: 28.05%
 
 ![](Aspose.Words.1638c484-0abc-4c0b-842b-bbc6bf799ec3.017.png)
 
